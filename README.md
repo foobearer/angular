@@ -35,3 +35,52 @@ Angular 6 Basics
 
         let obs = this.http.get('https://api.github.com/users/foobearer');
         obs.subscribe((response) => console.log(response));
+
+
+## modular component structure using ng-content
+    #### Reusing component and passing dynamic content
+
+        #### Base structure:
+
+        <div class="main-container">
+            <div class="header">
+                <h4 class="primary">/* Add another component */</h4>
+                <span class="subheader-title"> /* Add subheading title here */ </span>
+            </div>
+            <div class="content">
+                <div>
+                /* Add modal content here */
+                </div>
+            </div>
+            <div class="footer">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-primary>Add</button>
+            </div>
+        </div>
+
+        #### Multiple ng-content projections:
+
+        <div class="main-container">
+            <div class="header">
+                <ng-content select="h4"></ng-content>
+                <ng-content select="span"></ng-content>
+            </div>
+            <div class="content">
+                <ng-content select="div">
+                    /* Add modal content here */
+                </ng-content>
+            </div>
+            <div class="footer">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-primary>Add</button>
+            </div>
+        </div>
+
+        #### Calling reusable component:
+
+        <add-create-modal>
+            <h4 class="primary"> /* Add another component */ </h4>
+            <span class="subheader"> /* Add subheading title here */ </span>
+            <div> /* Add modal content here */ </div>
+        </add-create-modal>
+        
