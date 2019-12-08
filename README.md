@@ -37,10 +37,11 @@ Angular 6 Basics
         obs.subscribe((response) => console.log(response));
 
 
-## modular component structure using ng-content
-    #### Reusing component and passing dynamic content
+## Modular component structure using ng-content
 
-        #### Base structure:
+ #### Reusing component and passing dynamic content
+
+   #### Base structure:
 
         <div class="main-container">
             <div class="header">
@@ -58,7 +59,7 @@ Angular 6 Basics
             </div>
         </div>
 
-        #### Multiple ng-content projections:
+   #### Multiple ng-content projections:
 
         <div class="main-container">
             <div class="header">
@@ -76,7 +77,7 @@ Angular 6 Basics
             </div>
         </div>
 
-        #### Calling reusable component:
+   #### Calling reusable component::
 
         <add-create-modal>
             <h4 class="primary"> /* Add another component */ </h4>
